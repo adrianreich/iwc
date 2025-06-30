@@ -1,0 +1,101 @@
+- doc: Test outline for FFPE-DNA-workflow-QC-(imported-from-uploaded-file)
+  job:
+    Paired Read Collection:
+      class: Collection
+      collection_type: list:paired
+      elements:
+      - class: Collection
+        type: paired
+        identifier: SRR2911450_T3_frozen
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+      - class: Collection
+        type: paired
+        identifier: SRR2911447_T3_FFPE
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+      - class: Collection
+        type: paired
+        identifier: SRR2911444_N3_frozen
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+      - class: Collection
+        type: paired
+        identifier: SRR2911443_T2_frozen
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+      - class: Collection
+        type: paired
+        identifier: SRR2911442_T2_FFPE
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+      - class: Collection
+        type: paired
+        identifier: SRR2911441_N2_frozen
+        elements:
+        - class: File
+          identifier: forward
+          path: test-data/Paired Read Collection_forward.fastqsanger
+        - class: File
+          identifier: reverse
+          path: test-data/Paired Read Collection_reverse.fastqsanger
+    Select number of read pairs: '0.999'
+    Genome selection: CHM13_T2T_v2.0
+  outputs:
+    ffpe_multiqc_html:
+      path: test-data/ffpe_multiqc_html.html
+    multiqc_ffpe:
+      path: test-data/multiqc_ffpe.tabular
+    ffpe_bedtools_histo_data:
+      element_tests:
+        SRR2911450_T3_frozen:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911450_T3_frozen.tabular
+        SRR2911447_T3_FFPE:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911447_T3_FFPE.tabular
+        SRR2911444_N3_frozen:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911444_N3_frozen.tabular
+        SRR2911443_T2_frozen:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911443_T2_frozen.tabular
+        SRR2911442_T2_FFPE:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911442_T2_FFPE.tabular
+        SRR2911441_N2_frozen:
+          path: test-data/ffpe_bedtools_histo_data_SRR2911441_N2_frozen.tabular
+    ffpe_tasmanian_html:
+      element_tests:
+        SRR2911450_T3_frozen:
+          path: test-data/ffpe_tasmanian_html_SRR2911450_T3_frozen.html
+        SRR2911447_T3_FFPE:
+          path: test-data/ffpe_tasmanian_html_SRR2911447_T3_FFPE.html
+        SRR2911444_N3_frozen:
+          path: test-data/ffpe_tasmanian_html_SRR2911444_N3_frozen.html
+        SRR2911443_T2_frozen:
+          path: test-data/ffpe_tasmanian_html_SRR2911443_T2_frozen.html
+        SRR2911442_T2_FFPE:
+          path: test-data/ffpe_tasmanian_html_SRR2911442_T2_FFPE.html
+        SRR2911441_N2_frozen:
+          path: test-data/ffpe_tasmanian_html_SRR2911441_N2_frozen.html
